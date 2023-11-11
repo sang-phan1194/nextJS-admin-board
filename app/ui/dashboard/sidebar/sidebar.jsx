@@ -11,7 +11,8 @@ import {
   MdAnalytics,
   MdPeople,
   MdOutlineSettings,
-  MdHelpCenter
+  MdHelpCenter,
+  MdLogout
 } from 'react-icons/md';
 
 const menuItems = [
@@ -89,7 +90,7 @@ const Sidebar = () => {
           height={50}
         />
         <div className={styles.userDetail}>
-          <span className={styles.userName}>Helen Ken</span>
+          <span className={styles.userName}>Jerry An</span>
           <span className={styles.userRole}>Assistant</span>
         </div>
       </div>
@@ -103,6 +104,10 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
+      <button className={styles.logout}>
+        <MdLogout />
+        Logout
+      </button>
     </div>
   );
 };
