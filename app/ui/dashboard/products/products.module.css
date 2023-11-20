@@ -1,3 +1,65 @@
-.container{
-  
+.container {
+  background-color: var(--bgSoft);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.topContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.addBtn {
+  padding: 10px;
+  background-color: #D2DE32;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.addBtn:hover {
+  opacity: 0.8;
+}
+
+.table {
+  width: 100%;
+}
+
+.table td {
+  padding: 10px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.image {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.view {
+  background-color: #00A9FF;
+}
+
+.delete {
+  background-color: #BE3144;
 }
