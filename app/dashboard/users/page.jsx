@@ -29,38 +29,40 @@ const UsersPage = async () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <div className={styles.user}>
-                <Image
-                  src="/noavatar.png"
-                  width={40}
-                  height={40}
-                  className={styles.image}
-                  alt=""
-                />
-                John Han
-              </div>
-            </td>
-            <td>john@gmail.com</td>
-            <td>10.10.23</td>
-            <td>Admin</td>
-            <td>active</td>
-            <td>
-              <div className={styles.buttons}>
-                <Link href="/dashboard/users/test">
-                  <button className={`${styles.btn} ${styles.view}`}>
-                    View
-                  </button>
-                </Link>
-                <Link href="/">
-                  <button className={`${styles.btn} ${styles.delete}`}>
-                    Delete
-                  </button>
-                </Link>
-              </div>
-            </td>
-          </tr>
+          {users.map((user) => (
+            <tr key={user.id}>
+              <td>
+                <div className={styles.user}>
+                  <Image
+                    src={user.img || '/noavatar.png'}
+                    width={40}
+                    height={40}
+                    className={styles.image}
+                    alt=""
+                  />
+                  {user.username}
+                </div>
+              </td>
+              <td>{user.email}</td>
+              <td>{user.createdAt}</td>
+              <td>{user.isAdmin ? 'Admin' : 'Client'}</td>
+              <td>{user.isActive ? 'active' : 'inactive'}</td>
+              <td>
+                <div className={styles.buttons}>
+                  <Link href={`/dashboard/users/${user.id}`}>
+                    <button className={`${styles.btn} ${styles.view}`}>
+                      View
+                    </button>
+                  </Link>
+                  <Link href="/">
+                    <button className={`${styles.btn} ${styles.delete}`}>
+                      Delete
+                    </button>
+                  </Link>
+                </div>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
       <Pagination />
