@@ -1,6 +1,13 @@
 .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.container span {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(196, 196, 196);
 }
 
 .btn {
