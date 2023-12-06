@@ -2,7 +2,7 @@
 import styles from './pagination.module.css';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 
-const Pagination = ({ totalUser }) => {
+const Pagination = ({ totalCount }) => {
   const searchParams = useSearchParams();
   const { replace } = useRouter();
   const pathname = usePathname();
@@ -14,7 +14,7 @@ const Pagination = ({ totalUser }) => {
 
   const hasPrev = ITEM_PER_PAGE * (parseInt(page) - 1) > 0;
   const hasNext =
-    ITEM_PER_PAGE * (parseInt(page) - 1) + ITEM_PER_PAGE < totalUser;
+    ITEM_PER_PAGE * (parseInt(page) - 1) + ITEM_PER_PAGE < totalCount;
   const handleChangePage = (type) => {
     type === 'prev'
       ? params.set('page', +page - 1)
